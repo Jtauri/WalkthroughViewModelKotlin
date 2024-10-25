@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.walkthroughviewmodelkotlin.ui.theme.WalkthroughViewModelKotlinTheme
+import com.example.walkthroughviewmodelkotlin.ui.viewmodel.Todo
 import com.example.walkthroughviewmodelkotlin.ui.viewmodel.TodoViewModel
 
 /*
@@ -56,14 +57,14 @@ fun TodoScreen(modifier: Modifier = Modifier, todoViewModel: TodoViewModel) {
 }
 
 @Composable
-fun TodoList(modifier: Modifier = Modifier, todos: List<String>) {
+fun TodoList(modifier: Modifier = Modifier, todos: List<Todo>) {
     LazyColumn(
         modifier = modifier,
         contentPadding = PaddingValues(8.dp),
     ) {
         items(todos) { todo ->
             Text(
-                text = todo,
+                text = todo.title,
                 modifier = Modifier.padding(8.dp)
             )
             // Värit teeman mukaan ni ei tarvi ite miettiä ulkonäköä tässä vaiheessa
